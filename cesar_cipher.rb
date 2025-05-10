@@ -7,14 +7,24 @@ def decode_character(number)
   chars[number]
 end
 
+#Handels letters uppercase and lowercase
 def shift_character(character, shift, num_chars = 26)
-  encoded_char = (encode_character(character) + shift)%num_chars
+  #Check if character should be shifted
+  unless ('a'..'z').include?(character) || ('A'..'Z').include?(character)
+    return character
+  end
 
+  encoded_char = (encode_character(character) + shift)%num_chars
   unless character.upcase == character
     return decode_character(encoded_char)
   else
     return decode_character(encoded_char).upcase
   end
+end
+
+#Handels letter, punctuation and spaces
+def handel_shift(character, shift)
+
 end
 
 def caesar_cipher(string, shift)
