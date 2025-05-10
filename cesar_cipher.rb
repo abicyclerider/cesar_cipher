@@ -5,6 +5,7 @@ end
 def decode_character(number)
   chars = 'abcdefghijklmnopqrstuvwxyz'.split('')
   chars[number]
+end
 
 def shift_character(character, shift)
   (encode_character(character) + shift)%25
@@ -12,4 +13,5 @@ def shift_character(character, shift)
 end
 
 def caesar_cipher(string, shift)
+  
 end
