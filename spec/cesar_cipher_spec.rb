@@ -20,5 +20,13 @@ describe '#cesar_cipher' do
     end
   end
 
+  context 'when there are non-letter characters' do
+    it 'does not shift the non-letter characters' do
+      test_str = 'A B $ c '
+      result = caesar_cipher(test_str, 1)
+      expect(result).to eq('B C $ d ')
+    end
+  end
+
   end
 end
